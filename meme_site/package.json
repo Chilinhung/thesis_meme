@@ -4,7 +4,7 @@
   "description": "",
   "main": "cnt_db.js",
   "scripts": {
-    "start": "cnt_db.js"
+    "start": "node cnt_db.js"
   },
   "keywords": [],
   "author": "",
