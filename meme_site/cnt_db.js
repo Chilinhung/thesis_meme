@@ -1,10 +1,11 @@
+const path = require("path");
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
 // tackle root URL GET requests
 app.get("/", (req, res) => {
-  res.send("Welcome to the Meme Survey App!");
+  res.sendFile(path.join(__dirname, "meme_site", "questionnaire.html"));
 });
 
 const { Pool } = require("pg");
@@ -13,6 +14,7 @@ const cors = require("cors");
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static("meme_site"));
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL, // Heroku 會自動設置此環境變量
