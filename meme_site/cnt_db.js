@@ -1,8 +1,15 @@
 const express = require("express");
+const app = express();
+const port = process.env.PORT || 3000;
+
+// tackle root URL GET requests
+app.get("/", (req, res) => {
+  res.send("Welcome to the Meme Survey App!");
+});
+
 const { Pool } = require("pg");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -46,7 +53,6 @@ async function saveResponse(questionId, aspect, value) {
   }
 }
 
-const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
