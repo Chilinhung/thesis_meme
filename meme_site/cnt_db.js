@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 
 // tackle root URL GET requests
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "meme_site", "questionnaire.html"));
+  res.sendFile(path.join(__dirname, "questionnaire.html"));
 });
 
 const { Pool } = require("pg");
@@ -14,7 +14,7 @@ const cors = require("cors");
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static("meme_site"));
+app.use(express.static(__dirname));
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL, // Heroku 會自動設置此環境變量
