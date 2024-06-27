@@ -1,0 +1,114 @@
+body {
+  background-color: #fff8d7; /* 背景色 */
+  margin: 0; /* 移除默認的外邊距 */
+  padding: 0; /* 移除默認的内邊距 */
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 75%; /* 调整主畫面寬度 */
+  margin: auto;
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+.title {
+  text-align: center;
+}
+
+.bottom-dropdown {
+  justify-content: center;
+  text-align: center;
+}
+
+.questions {
+  display: grid;
+  /*grid-template-columns: 1fr 2fr; /* 调整圖片和問題的比例 */
+  gap: 20px; /* 列間距 */
+  align-items: left; /* 垂直置中對齊 */
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.questions h3 {
+  text-align: left;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Align the items vertically */
+}
+
+.question-text {
+  width: 400px;
+  margin-top: 10px;
+  line-height: 3.3;
+}
+.questions img {
+  max-width: 30%;
+  margin-right: 30px; /* margin on the right (to image */
+}
+
+.slider-container {
+  position: relative;
+  width: 100;
+}
+.slider-container input[type="range"] {
+  pointer-events: auto; /* 允許滑鼠事件 */
+  z-index: 1000; /* 確保在頂層 */
+  position: relative;
+  width: 100%; /* Ensure the slider is full width to align ticks */
+}
+
+.slider-marks {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  padding-left: 4px; /* 调整第一个刻度的位置 */
+  padding-right: 4px; /* 调整最后一个刻度的位置 */
+  bottom: -25px; /* 控制刻度标记相对于滑块的垂直位置 */
+}
+
+.slider-marks span {
+  /* position: relative; */
+  display: block;
+  text-align: center;
+}
+
+input[type="range"] {
+  width: 50%;
+  margin: 4px 0; /* Adjust margin to give space for labels */
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh; /* 讓容器高度為視窗高度 */
+}
+
+#submit_btn {
+  background-color: #005757; /* 綠色背景 */
+  color: white; /* 白色文字 */
+  padding: 10px 23px; /* 按鈕內邊距 */
+  text-align: center; /* 文字置中 */
+  text-decoration: none; /* 移除文字下劃線 */
+  display: inline-block; /* 內聯區塊元素 */
+  font-size: 16px; /* 字體大小 */
+  margin: 4px 2px; /* 外邊距 */
+  cursor: pointer; /* 鼠標指針 */
+  border: none; /* 無邊框 */
+  border-radius: 8px; /* 圓角 */
+}
+
+#submit_btn:hover {
+  background-color: #00caca; /* 當鼠標懸停時的顏色 */
+}
+
+#submit_btn::after {
+  background-color: #613030;
+}
