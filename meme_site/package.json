@@ -1,0 +1,12 @@
+{
+  "name": "meme_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cnt_db.js",
+  "scripts": {
+    "start": "cnt_db.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
