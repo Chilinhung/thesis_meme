@@ -125,7 +125,7 @@ input[type="range"] {
     width: 100%; /* 使得文字、滑動條和圖片寬度為100% */
   }
   .question-text {
-    font-size: 14px; /* 調小字體大小 */
+    font-size: 13px; /* 調小字體大小 */
   }
 
   .questions {
