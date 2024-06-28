@@ -112,3 +112,37 @@ input[type="range"] {
 #submit_btn::after {
   background-color: #613030;
 }
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%; /* 在小屏幕上增加容器寬度 */
+    padding: 10px; /* 減少內邊距 */
+  }
+
+  .question-text,
+  .slider-marks,
+  .questions img {
+    width: 100%; /* 使得文字、滑動條和圖片寬度為100% */
+  }
+
+  .questions {
+    margin-left: 10px; /* 減少左邊距 */
+    margin-right: 10px; /* 增加右邊距 */
+  }
+
+  .slider-container input[type="range"] {
+    width: 100%; /* 調整滑動條的寬度為100% */
+  }
+
+  input[type="range"] {
+    width: 100%; /* 調整範圍輸入的寬度 */
+  }
+
+  .slider-marks {
+    bottom: -20px; /* 調整標記的位置更靠近滑動條 */
+  }
+
+  #submit_btn {
+    padding: 12px 24px; /* 增大按鈕的點擊區域 */
+  }
+}
