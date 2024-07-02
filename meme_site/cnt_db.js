@@ -3,6 +3,12 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use((req, res, next) => {
+  const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+  console.log("Client IP:", ip); // print IP address
+  next();
+});
+
 // tackle root URL GET requests
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "questionnaire.html"));
@@ -32,7 +38,7 @@ app.post("/submit", async (req, res) => {
   try {
     for (const response of responses) {
       const { questionId, aspect, value } = response;
-      await saveResponse(questionId, aspect, value);
+      await saveResponse(questionId, aspect, value, ip);
     }
     res.send({ status: "success", message: "All responses saved!" });
   } catch (error) {
@@ -46,7 +52,7 @@ app.post("/submit", async (req, res) => {
 async function saveResponse(questionId, aspect, value) {
   try {
     const query =
-      "INSERT INTO survey_results(question_id, aspect, value) VALUES($1, $2, $3)";
+      "INSERT INTO survey_results(question_id, aspect, value, ip) VALUES($1, $2, $3, $4)";
     const result = await pool.query(query, [questionId, aspect, value]);
     return result;
   } catch (error) {
