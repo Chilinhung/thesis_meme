@@ -3,11 +3,13 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
+/*
 app.use((req, res, next) => {
   const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
   console.log("Client IP:", ip); // print IP address
   next();
 });
+*/
 
 // tackle root URL GET requests
 app.get("/", (req, res) => {
@@ -38,7 +40,7 @@ app.post("/submit", async (req, res) => {
   try {
     for (const response of responses) {
       const { questionId, aspect, value } = response;
-      await saveResponse(questionId, aspect, value, ip);
+      await saveResponse(questionId, aspect, value);
     }
     res.send({ status: "success", message: "All responses saved!" });
   } catch (error) {
