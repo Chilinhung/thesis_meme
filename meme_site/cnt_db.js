@@ -52,7 +52,7 @@ app.post("/submit", async (req, res) => {
 async function saveResponse(questionId, aspect, value) {
   try {
     const query =
-      "INSERT INTO survey_results(question_id, aspect, value, ip) VALUES($1, $2, $3, $4)";
+      "INSERT INTO survey_results(question_id, aspect, value) VALUES($1, $2, $3)";
     const result = await pool.query(query, [questionId, aspect, value]);
     return result;
   } catch (error) {
