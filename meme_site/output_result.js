@@ -18,6 +18,7 @@ document.getElementById("submit_btn").addEventListener("click", function () {
     .then((data) => {
       console.log("Success:", data);
       alert("問卷已成功提交，謝謝!");
+      location.reload();
     })
     .catch((error) => {
       console.error("Error:", error);
